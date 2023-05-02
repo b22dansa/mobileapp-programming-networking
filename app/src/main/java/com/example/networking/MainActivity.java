@@ -18,12 +18,18 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private ArrayList<Mountain> items;
     private RecyclerView.Adapter myAdapter;
 
+    //Def RecyclerView
+    RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         new JsonFile(this, this).execute(JSON_FILE);
+
+        // Added
+        recyclerView = findViewById(R.id.recyclerView);
     }
 
     @Override
