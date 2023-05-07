@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
     private final String JSON_FILE = "mountains.json";
 
     //Added
-    private ArrayList<Mountain> items;
+    private ArrayList<Mountain> Mountain = new ArrayList<>();
     private RecyclerView.Adapter myAdapter;
 
     //Def RecyclerView
