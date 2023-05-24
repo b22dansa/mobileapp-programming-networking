@@ -1,33 +1,36 @@
 package com.example.networking;
 
 public class Mountain {
+    public String type;
 
-    private String ID;
-
-    private String Name;
-
-    private String Type;
-
-    private String Company;
-
-    private String Location;
-
-    private String Category;
-
-    private int Size;
-
-    private int Cost;
+    public String name;
+    public String ID;
+    public String company;
+    public String location;
+    public String category;
+    public int size;
+    public int cost;
 
 
-    public Mountain(String ID, String name, String type, String company, String location, String category, int size, int cost) {
+
+    public Mountain(String ID, String name, String type, String company, String location,
+                    String category, int size, int cost) {
         this.ID = ID;
-        Name = name;
-        Type = type;
-        Company = company;
-        Location = location;
-        Category = category;
-        Size = size;
-        Cost = cost;
+        this.name = name;
+        this.type = type;
+        this.company = company;
+        this.location = location;
+        this.category = category;
+        this.size = size;
+        this.cost = cost;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getID() {
@@ -38,67 +41,52 @@ public class Mountain {
         this.ID = ID;
     }
 
-    public String getName() {
-        return Name;
-    }
-
-    public void setName(String name) {
-        Name = name;
-    }
-
-    public String getType() {
-        return Type;
-    }
-
-    public void setType(String type) {
-        Type = type;
-    }
-
     public String getCompany() {
-        return Company;
+        return company;
     }
 
     public void setCompany(String company) {
-        Company = company;
+        this.company = company;
     }
 
     public String getLocation() {
-        return Location;
+        return location;
     }
 
     public void setLocation(String location) {
-        Location = location;
+        this.location = location;
     }
 
     public String getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(String category) {
-        Category = category;
+        this.category = category;
     }
 
     public int getSize() {
-        return Size;
+        return size;
     }
 
     public void setSize(int size) {
-        Size = size;
+        this.size = size;
     }
 
     public int getCost() {
-        return Cost;
+        return cost;
     }
 
     public void setCost(int cost) {
-        Cost = cost;
+        this.cost = cost;
     }
 
+    public String getType() {
+        return type;
+    }
 
-
-    // auxdata, wiki, img to make
+    public void setType(String type) {
+        this.type = type;
+    }
 
 }
-
-
-

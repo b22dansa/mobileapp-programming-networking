@@ -1,22 +1,28 @@
+package com.example.networking;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.networking.Mountain;
-import com.example.networking.R;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
-    private ArrayList<Mountain> MountainList;
+    public ArrayList<Mountain> MountainsList = new ArrayList<>();
 
-    public MyAdapter(ArrayList<Mountain> mountainList) {
-        MountainList = mountainList;
+    public MyAdapter() {
     }
 
     @NonNull
@@ -28,47 +34,35 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        Mountain Mount = this.MountainList.get(position);
-        holder.ID.setText(Mount.getID());
-        holder.Name.setText(Mount.getName());
-        holder.Type.setText(Mount.getType());
-        holder.Company.setText(Mount.getCompany());
-        holder.Location.setText(Mount.getLocation());
-        holder.Category.setText(Mount.getCategory());
-        holder.Size.setText(Mount.getSize());
-        holder.Cost.setText(Mount.getCost());
+        Mountain item = this.MountainsList.get(position);
+        holder.Name.setText("Name: " + item.getName()); // Name
+        holder.Company.setText("Company: " + item.getCompany()); // Company
+        holder.Location.setText("Location: " + item.getLocation());
+        holder.Category.setText("Category: " + item.getCategory()); // Category
+        holder.Size.setText("Size: " + Integer.toString(item.getSize())); //
+        holder.Cost.setText("Cost: " + Integer.toString(item.getCost())); // Cost
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return MountainsList.size();
     }
+
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        private final TextView ID;
-
         private final TextView Name;
-
-        private final TextView Type;
-
         private final TextView Company;
-
         private final TextView Location;
-
         private final TextView Category;
-
         private final TextView Size;
-
         private final TextView Cost;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            this.ID = itemView.findViewById(R.id.ID);
             this.Name = itemView.findViewById(R.id.Name);
-            this.Type = itemView.findViewById(R.id.Type);
             this.Company = itemView.findViewById(R.id.Company);
             this.Location = itemView.findViewById(R.id.Location);
             this.Category = itemView.findViewById(R.id.Category);
@@ -79,4 +73,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
 
     }
+
+
 }
+
